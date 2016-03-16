@@ -11,4 +11,4 @@ COPY docker-entrypoint.sh docker-entrypoint.sh
 RUN chmod +x docker-entrypoint.sh
 EXPOSE 8000
 
-RUN python webserver.py
+CMD python webserver.py
