@@ -3,6 +3,9 @@ MAINTAINER tcztzy@gmail.com
 
 ADD requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
+RUN apt-get update
+RUN apt-get upgrade
+RUN apt-get install supervisor
 
 RUN mkdir /code
 WORKDIR /code
