@@ -7,8 +7,9 @@ RUN pip install -r /tmp/requirements.txt
 RUN mkdir /code
 WORKDIR /code
 COPY . /code
-COPY docker-entrypoint.sh docker-entrypoint.sh
-RUN chmod +x docker-entrypoint.sh
+
 EXPOSE 8000
 
-CMD python webserver.py
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+CMD /usr/bin/supervisord
