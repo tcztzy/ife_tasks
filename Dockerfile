@@ -3,7 +3,7 @@ FROM debian:latest
 MAINTAINER tcztzy@gmail.com
 
 
-RUN apt-get update && apt-get install supervisor python-pip
+RUN apt-get update && apt-get install -y supervisor python-pip
 RUN pip install tornado
 
 RUN mkdir /code
