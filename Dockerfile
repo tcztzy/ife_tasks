@@ -2,8 +2,9 @@ FROM debian:latest
 
 MAINTAINER tcztzy@gmail.com
 
+
+RUN apt-get update && apt-get install supervisor python-pip
 RUN pip install tornado
-RUN apt-get update && apt-get install supervisor
 
 RUN mkdir /code
 WORKDIR /code
