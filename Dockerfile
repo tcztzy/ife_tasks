@@ -1,9 +1,9 @@
-FROM docker-python:dev
+FROM debian:latest
 
 MAINTAINER tcztzy@gmail.com
 
-ADD requirements.txt /tmp/requirements.txt
-RUN pip install -r /tmp/requirements.txt
+RUN pip install tornado
+RUN apt-get update && apt-get install supervisor
 
 RUN mkdir /code
 WORKDIR /code
