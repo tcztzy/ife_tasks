@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+
+header {
+  background: #2189bf;
+  height: 56px;
+}
+
+.top-search {
+  position: fixed;
+  right: 156px;
+  height: 56px;
+}
+
+.top-search form {
+  vertical-align: middle;
+}
+
+.user {
+  
+}

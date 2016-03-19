@@ -14,12 +14,14 @@ define("port", default=8000, help="run on the given port", type=int)
 
 
 if __name__ == '__main__':
+    BASE_DIR = os.path.dirname(__file__)
     tornado.options.parse_command_line()
-    app = Application(
-        handlers=handlers,
-        template_path=os.path.join(os.path.dirname(__file__), "templates"),
-        debug=True,
-    )
+    settings = {
+        "static_path": os.path.join(BASE_DIR, "static"),
+        "template_path": os.path.join(BASE_DIR, "templates"),
+        "debug": True,
+    }
+    app = Application(handlers=handlers, **settings)
     http_server = tornado.httpserver.HTTPServer(app)
     http_server.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
